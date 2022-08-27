@@ -20,6 +20,7 @@ gamePart.appendChild(howManyPlayers);
 
 function selectPlayers() {
     const playerNum = document.getElementById('playerNumber').value;
+    playersNumber = playerNum;
     gamePart.removeChild(howManyPlayers);
     const playerNames = [playerNum];
     for (let i = 0; i < playerNum; i++) {
@@ -48,18 +49,74 @@ function nameAccepted(i) {
     const playerNameInput = document.getElementById(`typedPlayerName${i}`);
     const playerNameAccept = document.getElementById(`playerNameButton${i}`);
     const name = document.getElementById(`typedPlayerName${i}`).value;
+
+    playersNames.splice(i, 0, name);
+
     playerBox.removeChild(playerNameInput);
     playerBox.removeChild(playerNameAccept);
-    playerBox.innerText = `${name} \n Enter your number:`;
+    playerBox.innerText = ``;
+
+    const enteredName = document.createElement('div');
+    enteredName.innerText = `${name}`;
 
     const numberSelect = document.createElement('input');
     numberSelect.setAttribute('id', `numberOfPlayer${i}`);
+    numberSelect.setAttribute('value', 'enter your number');
 
     const numberAccept = document.createElement('button');
     numberAccept.setAttribute('id', `numberButton${i}`);
     numberAccept.innerText = 'Accept your number';
-    numberAccept.setAttribute('onclick', "alert('test')");
+    numberAccept.setAttribute('onclick', `numberAccept(${i})`);
 
+    playerBox.appendChild(enteredName);
     playerBox.appendChild(numberSelect);
     playerBox.appendChild(numberAccept);
 }
+
+function numberAccept(i) {
+    const playerBox = document.getElementById(`playerBox${i}`);
+    const numberButton = document.getElementById(`numberButton${i}`);
+    const numberOfPlayer = document.getElementById(`numberOfPlayer${i}`);
+    const number = document.getElementById(`numberOfPlayer${i}`).value;
+
+    numbersChosenByPlayers.splice(i, 0, number);
+
+    playerBox.removeChild(numberButton);
+    playerBox.removeChild(numberOfPlayer);
+
+    const selectedNumber = document.createElement('div');
+    selectedNumber.innerText = `${number}`;
+
+    const playButton = document.createElement('button');
+    playButton.setAttribute('id', `playButtonNr${i}`);
+    playButton.setAttribute('onclick', `playGame(${number},${i})`);
+    playButton.innerText = 'Throw dice';
+
+    playerBox.appendChild(selectedNumber);
+    playerBox.appendChild(playButton);
+}
+
+function playGame(num, x) {
+    const playerBox = document.getElementById(`playerBox${x}`);
+
+    if (isThisFirstGame[x] == 1) {
+        const oldPlayerBox = document.getElementById(`numberGotten${x}`);
+        playerBox.removeChild(oldPlayerBox);
+    } else {
+        isThisFirstGame.splice(x, 0, 1);
+    }
+
+    let randomNumber = Math.floor(Math.random() * 6 + 1);
+    for (let i = 0; i < playersNames.length; i++) {
+        if (randomNumber == numbersChosenByPlayers[i]) {
+            const numberGotten = document.createElement('div');
+            numberGotten.setAttribute('id', `numberGotten${x}`);
+            numberGotten.innerHTML = `You rolled ${randomNumber} and it was ${playersNames[i]} number!`;
+            playerBox.appendChild(numberGotten);
+        }
+    }
+}
+const isThisFirstGame = [];
+let playersNumber = 0;
+const numbersChosenByPlayers = [];
+const playersNames = [];
