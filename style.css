@@ -1,6 +1,7 @@
 body {
-    padding: 1%;
+    padding: 10px;
     margin: 0;
+    overflow: hidden;
 }
 #boxOfPage {
     display: flex;
@@ -41,4 +42,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.playerBox {
+    border: 2px solid red;
+    padding: 4px;
+    min-width: 200px;
+    min-height: 100px;
 }

@@ -7,6 +7,12 @@ howManyPlayers.innerText = 'How many players?';
 
 const howManyPlayersInput = document.createElement('input');
 howManyPlayersInput.setAttribute('id', 'playerNumber');
+howManyPlayers.setAttribute('class', 'playerBox');
+howManyPlayersInput.setAttribute('value', 'min 2 max 6');
+howManyPlayersInput.setAttribute(
+    'onclick',
+    "howManyPlayersInput.setAttribute('value','')"
+);
 howManyPlayersInput.innerText = 'How many players?';
 
 const howManyPlayersButton = document.createElement('button');
@@ -29,8 +35,9 @@ function selectPlayers() {
         createPlayer.innerText = `Player ${i + 1} name:`;
         createPlayer.style.cssText =
             'display:flex; flex-direction:column; align-items: center; justify-content: center; gap:10px; margin:10px;';
-
+        createPlayer.setAttribute('class', 'playerBox');
         const playerNameInput = document.createElement('input');
+        playerNameInput.setAttribute('value', `Player ${i + 1}`);
         playerNameInput.setAttribute('id', `typedPlayerName${i}`);
 
         const playerNameAccept = document.createElement('button');
@@ -105,16 +112,17 @@ function playGame(num, x) {
     } else {
         isThisFirstGame.splice(x, 0, 1);
     }
-
     let randomNumber = Math.floor(Math.random() * 6 + 1);
+    const numberGotten = document.createElement('div');
+    numberGotten.setAttribute('id', `numberGotten${x}`);
+    numberGotten.innerText = `Number ${randomNumber} was rolled, it was nobody's number`;
+
     for (let i = 0; i < playersNames.length; i++) {
         if (randomNumber == numbersChosenByPlayers[i]) {
-            const numberGotten = document.createElement('div');
-            numberGotten.setAttribute('id', `numberGotten${x}`);
-            numberGotten.innerHTML = `You rolled ${randomNumber} and it was ${playersNames[i]} number!`;
-            playerBox.appendChild(numberGotten);
+            numberGotten.innerText = `You rolled ${randomNumber} and it was ${playersNames[i]} number!`;
         }
     }
+    playerBox.appendChild(numberGotten);
 }
 const isThisFirstGame = [];
 let playersNumber = 0;
