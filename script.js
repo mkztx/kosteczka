@@ -2,14 +2,14 @@ const gamePart = document.getElementById('gamePart');
 
 const howManyPlayers = document.createElement('div');
 howManyPlayers.style.cssText =
-    'display:flex; flex-direction:column; align-items: center; justify-content: center; gap:10px; margin:10px;';
+    'display:flex; flex-direction:column; align-items: center; justify-content: center; gap:10px; margin:10px; flex:1;';
 howManyPlayers.innerText = 'How many players?';
 
 const howManyPlayersInput = document.createElement('input');
 howManyPlayersInput.setAttribute('id', 'playerNumber');
 howManyPlayers.setAttribute('class', 'playerBox');
 howManyPlayersInput.setAttribute('type', 'number');
-howManyPlayersInput.setAttribute('value', 'min 2 max 6');
+howManyPlayersInput.setAttribute('value', '2');
 howManyPlayersInput.setAttribute(
     'onclick',
     "howManyPlayersInput.setAttribute('value','')"
@@ -35,7 +35,7 @@ function selectPlayers() {
         createPlayer.setAttribute('id', `playerBox${i}`);
         createPlayer.innerText = `Player ${i + 1} name:`;
         createPlayer.style.cssText =
-            'display:flex; flex-direction:column; align-items: center; justify-content: center; gap:10px; margin:10px;';
+            'display:flex; flex-direction:column; align-items: center; justify-content: center; gap:10px; margin:10px; flex:1;';
         createPlayer.setAttribute('class', 'playerBox');
         const playerNameInput = document.createElement('input');
         playerNameInput.setAttribute('value', `Player ${i + 1}`);
