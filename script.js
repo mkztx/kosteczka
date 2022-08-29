@@ -2,7 +2,7 @@ const gamePart = document.getElementById('gamePart');
 
 const howManyPlayers = document.createElement('div');
 howManyPlayers.style.cssText =
-    'display:flex; flex-direction:column; align-items: center; justify-content: space-around; padding:10%; margin:10px; flex:1; ';
+    'display:flex; flex-direction:column; align-items: center; justify-content: space-around; padding:5%; margin:10px; flex:1; ';
 howManyPlayers.innerText = 'How many players?';
 
 const howManyPlayersInput = document.createElement('input');
@@ -35,7 +35,7 @@ function selectPlayers() {
         createPlayer.setAttribute('id', `playerBox${i}`);
         createPlayer.innerText = `Player ${i + 1} name:`;
         createPlayer.style.cssText =
-            'display:flex; flex-direction:column; align-items: center; justify-content: space-around; padding:10%;  margin:10px; flex:1;';
+            'display:flex; flex-direction:column; align-items: center; justify-content: space-around; padding:5%;  margin:10px; flex:1;';
         createPlayer.setAttribute('class', 'playerBox');
         const playerNameInput = document.createElement('input');
         playerNameInput.setAttribute('value', `Player ${i + 1}`);
@@ -146,6 +146,7 @@ function playGame(num, x) {
     let randomNumber = Math.floor(Math.random() * 6 + 1);
     const numberGotten = document.createElement('div');
     numberGotten.setAttribute('id', `numberGotten${x}`);
+    numberGotten.setAttribute('class', 'numberGotten');
     numberGotten.innerText = `Number ${randomNumber} was rolled, it was nobody's number`;
 
     let won = 0;
@@ -154,7 +155,8 @@ function playGame(num, x) {
         if (randomNumber == numbersChosenByPlayers[i] && randomNumber != num) {
             won++;
             numberGotten.innerText = `You rolled ${randomNumber} and it was ${playersNames[i]} number!`;
-            numberGotten.style.cssText = 'color:red; font-size:20px';
+            numberGotten.style.cssText =
+                'color:red; font-size:20px; font-size:2vw;';
         }
     }
     if (won == 0) {

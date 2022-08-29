@@ -56,14 +56,20 @@ input {
     width: 30vw;
     font-size: 3vw;
     text-align: center;
+    min-height: 10%;
 }
 
 button {
     width: 30vw;
     font-size: 3vw;
+    min-height: 10%;
 }
 
 .textForNumberEnter {
     font-size: 3vw;
     text-align: center;
+}
+
+.numberGotten {
+    font-size: 1.8vw;
 }
