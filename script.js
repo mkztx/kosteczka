@@ -2,7 +2,7 @@ const gamePart = document.getElementById('gamePart');
 
 const howManyPlayers = document.createElement('div');
 howManyPlayers.style.cssText =
-    'display:flex; flex-direction:column; align-items: center; justify-content: center; gap:10px; margin:10px; flex:1;';
+    'display:flex; flex-direction:column; align-items: center; justify-content: space-around; padding:10%; margin:10px; flex:1; ';
 howManyPlayers.innerText = 'How many players?';
 
 const howManyPlayersInput = document.createElement('input');
@@ -35,7 +35,7 @@ function selectPlayers() {
         createPlayer.setAttribute('id', `playerBox${i}`);
         createPlayer.innerText = `Player ${i + 1} name:`;
         createPlayer.style.cssText =
-            'display:flex; flex-direction:column; align-items: center; justify-content: center; gap:10px; margin:10px; flex:1;';
+            'display:flex; flex-direction:column; align-items: center; justify-content: space-around; padding:10%;  margin:10px; flex:1;';
         createPlayer.setAttribute('class', 'playerBox');
         const playerNameInput = document.createElement('input');
         playerNameInput.setAttribute('value', `Player ${i + 1}`);
@@ -78,6 +78,7 @@ function nameAccepted(i) {
 
     const numberText = document.createElement('div');
     numberText.setAttribute('id', `text${i}`);
+    numberText.setAttribute('class', 'textForNumberEnter');
     numberText.innerText = `enter your number`;
 
     playerBox.appendChild(enteredName);
