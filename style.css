@@ -1,6 +1,11 @@
 body {
     margin: 0;
     overflow: hidden;
+    background-color: rgb(246, 243, 231);
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    position: relative;
+    z-index: 1;
 }
 #boxOfPage {
     display: flex;
@@ -10,6 +15,9 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    z-index: 0;
+    position: relative;
+    background-color: rgb(246, 243, 231);
 }
 #header,
 #footer {
@@ -18,6 +26,10 @@ body {
     justify-content: center;
     height: 10vh;
     margin: 0;
+    text-align: center;
+    padding-right: 1%;
+    padding-left: 1%;
+    align-self: stretch;
 }
 
 #boxOfGame {
@@ -32,33 +44,55 @@ body {
 #header,
 #footer,
 #boxOfGame {
-    border: 5px solid black;
+    position: relative;
+    z-index: 10;
+    background-color: rgb(246, 243, 231);
+    box-shadow: -10px -10px 20px rgba(255, 255, 255, 1),
+        10px 10px 20px rgba(0, 0, 0, 0.55);
+    margin: 1%;
+    border-radius: 20px;
 }
 
 #gamePart {
-    border: 4px solid blue;
-    height: 80%;
-    width: 80%;
+    height: 99%;
+    width: 99%;
     display: flex;
     align-items: stretch;
     justify-content: center;
-    padding: 2%;
 }
 
 .playerBox {
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     flex: 1;
     margin: 1%;
+    border-radius: 30px;
+    background-color: rgb(234, 236, 236);
+    box-shadow: inset -10px -10px 20px rgba(255, 255, 255, 1),
+        inset 10px 10px 20px rgba(0, 0, 0, 0.35);
 }
 input {
     text-align: center;
+    padding: 1%;
+    border-radius: 99999px;
+    border: none;
+    box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
+        4px 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 button {
+    padding: 1%;
+    border: none;
+    border-radius: 99999px;
+    box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
+        4px 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+button:hover:enabled {
+    box-shadow: inset -4px -4px 10px rgba(255, 255, 255, 1),
+        inset 4px 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 .textForNumberEnter {
@@ -70,4 +104,10 @@ button {
 
 .column {
     flex-direction: column;
+}
+
+.rolledSomeonesNumber {
+    color: red;
+    font-size: 20px;
+    font-size: 2vw;
 }

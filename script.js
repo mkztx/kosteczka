@@ -78,6 +78,7 @@ function nameAccepted(i) {
 
     const numberSelect = document.createElement('input');
     numberSelect.setAttribute('id', `numberOfPlayer${i}`);
+    numberSelect.setAttribute('value', `${i + 1}`);
     numberSelect.setAttribute('type', 'number');
 
     const numberAccept = document.createElement('button');
@@ -164,8 +165,7 @@ function playGame(num, x) {
         if (randomNumber == numbersChosenByPlayers[i] && randomNumber != num) {
             won++;
             numberGotten.innerText = `You rolled ${randomNumber} and it was ${playersNames[i]} number!`;
-            numberGotten.style.cssText =
-                'color:red; font-size:20px; font-size:2vw;';
+            numberGotten.setAttribute('class', 'rolledSomeonesNumber');
         }
     }
     if (won == 0) {
