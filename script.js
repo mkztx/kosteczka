@@ -1,8 +1,15 @@
+let mobile = 0;
+if (innerHeight > innerWidth) {
+    mobile = 1;
+}
+console.log(mobile);
 const gamePart = document.getElementById('gamePart');
 
+if (mobile == 1) {
+    gamePart.setAttribute('class', 'column');
+}
+
 const howManyPlayers = document.createElement('div');
-howManyPlayers.style.cssText =
-    'display:flex; flex-direction:column; align-items: center; justify-content: space-around; padding:5%; margin:10px; flex:1; ';
 howManyPlayers.innerText = 'How many players?';
 
 const howManyPlayersInput = document.createElement('input');
@@ -27,28 +34,30 @@ gamePart.appendChild(howManyPlayers);
 
 function selectPlayers() {
     const playerNum = document.getElementById('playerNumber').value;
-    playersNumber = playerNum;
-    gamePart.removeChild(howManyPlayers);
-    const playerNames = [playerNum];
-    for (let i = 0; i < playerNum; i++) {
-        const createPlayer = document.createElement('div');
-        createPlayer.setAttribute('id', `playerBox${i}`);
-        createPlayer.innerText = `Player ${i + 1} name:`;
-        createPlayer.style.cssText =
-            'display:flex; flex-direction:column; align-items: center; justify-content: space-around; padding:5%;  margin:10px; flex:1;';
-        createPlayer.setAttribute('class', 'playerBox');
-        const playerNameInput = document.createElement('input');
-        playerNameInput.setAttribute('value', `Player ${i + 1}`);
-        playerNameInput.setAttribute('id', `typedPlayerName${i}`);
+    if (playerNum <= 6 && playerNum >= 1) {
+        playersNumber = playerNum;
+        gamePart.removeChild(howManyPlayers);
+        const playerNames = [playerNum];
+        for (let i = 0; i < playerNum; i++) {
+            const createPlayer = document.createElement('div');
+            createPlayer.setAttribute('id', `playerBox${i}`);
+            createPlayer.innerText = `Player ${i + 1} name:`;
+            createPlayer.setAttribute('class', 'playerBox');
+            const playerNameInput = document.createElement('input');
+            playerNameInput.setAttribute('value', `Player ${i + 1}`);
+            playerNameInput.setAttribute('id', `typedPlayerName${i}`);
 
-        const playerNameAccept = document.createElement('button');
-        playerNameAccept.setAttribute('id', `playerNameButton${i}`);
-        playerNameAccept.innerText = 'Accept Name';
-        playerNameAccept.setAttribute('onclick', `nameAccepted(${i})`);
+            const playerNameAccept = document.createElement('button');
+            playerNameAccept.setAttribute('id', `playerNameButton${i}`);
+            playerNameAccept.innerText = 'Accept Name';
+            playerNameAccept.setAttribute('onclick', `nameAccepted(${i})`);
 
-        createPlayer.appendChild(playerNameInput);
-        createPlayer.appendChild(playerNameAccept);
-        gamePart.appendChild(createPlayer);
+            createPlayer.appendChild(playerNameInput);
+            createPlayer.appendChild(playerNameAccept);
+            gamePart.appendChild(createPlayer);
+        }
+    } else {
+        howManyPlayersInput.style.cssText = 'color:red;';
     }
 }
 

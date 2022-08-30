@@ -1,5 +1,4 @@
 body {
-    padding: 10px;
     margin: 0;
     overflow: hidden;
 }
@@ -27,7 +26,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4vw;
     text-align: center;
 }
 
@@ -44,32 +42,32 @@ body {
     display: flex;
     align-items: stretch;
     justify-content: center;
+    padding: 2%;
 }
 
 .playerBox {
     border: 2px solid red;
-    padding: 4px;
-    min-width: 200px;
-    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    margin: 1%;
 }
 input {
-    width: 30vw;
-    font-size: 3vw;
     text-align: center;
-    min-height: 10%;
 }
 
 button {
-    width: 30vw;
-    font-size: 3vw;
-    min-height: 10%;
 }
 
 .textForNumberEnter {
-    font-size: 3vw;
     text-align: center;
 }
 
 .numberGotten {
-    font-size: 1.8vw;
+}
+
+.column {
+    flex-direction: column;
 }
