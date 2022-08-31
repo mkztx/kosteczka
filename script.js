@@ -7,6 +7,7 @@ const gamePart = document.getElementById('gamePart');
 
 if (mobile == 1) {
     gamePart.setAttribute('class', 'column');
+    gamePart.setAttribute('class', 'fontMobile');
 }
 
 const howManyPlayers = document.createElement('div');
