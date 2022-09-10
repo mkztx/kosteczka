@@ -8,10 +8,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Qwitcher+Grypen:wght@700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Qwitcher+Grypen:wght@700&family=Roboto:wght@900&display=swap"
             rel="stylesheet"
         />
     </head>
+
     <body>
         <div id="boxOfPage">
             <div id="header"><h1>KOSTECZKA</h1></div>
@@ -22,5 +23,15 @@
                 <h4>CREATED BY @ryba</h4>
             </div>
         </div>
+        <canvas id="gradient-canvas" data-transition-in />
+        <script type="module">
+            import { Gradient } from './Gradient.js';
+
+            // Create your instance
+            const gradient = new Gradient();
+
+            // Call `initGradient` with the selector to your canvas
+            gradient.initGradient('#gradient-canvas');
+        </script>
     </body>
 </html>

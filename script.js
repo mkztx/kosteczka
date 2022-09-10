@@ -1,14 +1,16 @@
-let mobile = 0;
-if (innerHeight > innerWidth) {
-    mobile = 1;
-}
-console.log(mobile);
-const gamePart = document.getElementById('gamePart');
+function checkMobile() {
+    let mobile = 0;
+    if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
+        mobile = 1;
+    }
+    console.log(mobile);
+    const gamePart = document.getElementById('gamePart');
 
-if (mobile == 1) {
-    gamePart.setAttribute('class', 'column');
-    gamePart.setAttribute('class', 'fontMobile');
+    if (mobile == 1) {
+        gamePart.setAttribute('class', 'column');
+    }
 }
+checkMobile();
 
 const howManyPlayers = document.createElement('div');
 howManyPlayers.innerText = 'How many players?';

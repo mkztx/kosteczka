@@ -1,11 +1,25 @@
 body {
     margin: 0;
-    background-color: rgb(246, 243, 231);
+
     padding-left: 0.5%;
     padding-right: 0.5%;
     position: relative;
     z-index: 1;
 }
+
+#gradient-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    --gradient-color-1: #c3e4ff;
+    --gradient-color-2: #6ec3f4;
+    --gradient-color-3: #eae2ff;
+    --gradient-color-4: #b9beff;
+}
+
 #boxOfPage {
     display: flex;
     flex-direction: column;
@@ -13,9 +27,7 @@ body {
     justify-content: space-between;
     margin: 0;
     padding: 0;
-    z-index: 0;
     position: relative;
-    background-color: rgb(246, 243, 231);
 }
 #header,
 #footer {
@@ -44,9 +56,6 @@ body {
 #boxOfGame {
     position: relative;
     z-index: 10;
-    background-color: rgb(246, 243, 231);
-    box-shadow: -10px -10px 20px rgba(255, 255, 255, 1),
-        10px 10px 20px rgba(0, 0, 0, 0.55);
     margin: 1%;
     border-radius: 20px;
 }
@@ -68,9 +77,8 @@ body {
     flex: 1;
     margin: 1%;
     border-radius: 30px;
-    background-color: rgb(234, 236, 236);
-    box-shadow: inset -10px -10px 20px rgba(255, 255, 255, 1),
-        inset 10px 10px 20px rgba(0, 0, 0, 0.35);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 4px solid rgba(255, 255, 255, 1);
 }
 input {
     text-align: center;
@@ -109,19 +117,16 @@ button:hover:enabled {
 
 .column {
     flex-direction: column;
-}
-.fontMobile {
     font-size: 10vw;
 }
-
 .rolledSomeonesNumber {
     color: red;
     font-size: 2vw;
 }
 #header {
-    font-family: 'Qwitcher Grypen', cursive;
-    text-shadow: 1px 1px 5px white, 5px 5px 10px red, 10px 10px 10px blue,
-        15px 15px 10px purple;
+    font-family: 'Roboto', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 3px rgba(255, 255, 255, 1);
     font-size: 50px;
 }
 
