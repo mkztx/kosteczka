@@ -58,6 +58,8 @@ body {
     z-index: 10;
     margin: 1%;
     border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 #gamePart {
@@ -125,6 +127,7 @@ button:hover:enabled {
 }
 #header {
     font-family: 'Roboto', sans-serif;
+    font-weight: 900;
     color: transparent;
     -webkit-text-stroke: 3px rgba(255, 255, 255, 1);
     font-size: 50px;
