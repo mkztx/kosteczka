@@ -147,12 +147,12 @@ button,
 .info > button {
     background-color: rgba(255, 255, 255, 0.6);
     border: 2px solid rgba(255, 255, 255, 1);
-    font-size: 10px;
+    font-size: 20px;
     color: black;
     position: absolute;
     z-index: 100;
-    top: 10.8vh;
-    right: 1vw;
+    bottom: 3%;
+    left: 2%;
     width: fit-content;
     box-shadow: none;
     border-radius: 5px;
@@ -162,7 +162,7 @@ button,
 .info > button:hover {
     box-shadow: none;
     color: rgb(48, 166, 170);
-    font-size: 14px;
+    font-size: 25px;
 }
 .infoBox {
     color: rgba(255, 255, 255, 1);
@@ -184,20 +184,20 @@ button,
     padding-bottom: 40px;
     border-radius: 30px;
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 .infoBox > button,
 .infoBox > button:hover {
-    align-self: center;
     box-shadow: none;
     border-radius: 0;
     background-color: transparent;
     color: rgb(177, 33, 33);
-    font-size: 3vh;
+    font-size: 30px;
 }
 .infoBox > button:hover {
     color: rgb(254, 47, 47);
 }
 #infoTextHeader {
-    font-size: 4vh;
+    font-size: 20px;
     color: rgb(229, 255, 32);
 }
