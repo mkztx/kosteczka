@@ -181,3 +181,12 @@ const isThisFirstGame = [];
 let playersNumber = 0;
 const numbersChosenByPlayers = [];
 const playersNames = [];
+
+function showInfoBox() {
+    const box = document.querySelector('.infoBox');
+    box.style.visibility = 'visible';
+}
+function hideInfoBox() {
+    const box = document.querySelector('.infoBox');
+    box.style.visibility = 'hidden';
+}
