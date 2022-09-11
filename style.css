@@ -28,6 +28,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    gap: 50px;
 }
 #header,
 #footer {
@@ -125,6 +126,8 @@ button:hover:enabled {
     font-size: 2vw;
 }
 #header {
+    padding-left: 20%;
+    padding-right: 20%;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     color: transparent;
@@ -151,7 +154,7 @@ button,
     color: black;
     position: absolute;
     z-index: 100;
-    bottom: 3%;
+    top: 90px;
     left: 2%;
     width: fit-content;
     box-shadow: none;
