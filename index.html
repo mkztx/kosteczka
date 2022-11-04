@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Kosteczka Game</title>
-        <link href="./style.css" rel="stylesheet" />
-        <script src="./script.js" defer></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Qwitcher+Grypen:wght@700&family=Roboto:wght@300;900&display=swap"
-            rel="stylesheet"
-        />
-    </head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Kosteczka Game</title>
+		<link href="./style.css" rel="stylesheet" />
+		<script src="./script.js" defer></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Qwitcher+Grypen:wght@700&family=Roboto:wght@300;900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
 
-    <body>
-        <div class="info">
-            <button onclick="showInfoBox()">Info</button>
-        </div>
-        <div class="infoBox">
-            <p id="infoText">
-                <span id="infoTextHeader">How to play:</span><br /><br />
-                1. Choose number of players from 2 to 6. <br />
-                2. Enter namer of each player. <br />
-                3. Enter your number, numbers cant repeat. <br />
-                4. When your turn, throw a dice. <br /><br />
-                <span id="infoTextHeader">What is this all about:</span
-                ><br /><br />
-                Kosteczka is simple game similar to "bottle", you chose a number
-                and when someone gets your number you have to do something.
-                <br /><br />
-            </p>
-            <button onclick="hideInfoBox()">Zamknij</button>
-        </div>
-        <div id="boxOfPage">
-            <div id="header">
-                <h1>KOSTECZKA</h1>
-            </div>
-            <div id="boxOfGame">
-                <div id="gamePart"></div>
-            </div>
-            <div id="footer">
-                <h4>CREATED BY @ryba</h4>
-            </div>
-        </div>
-        <canvas id="gradient-canvas" data-transition-in />
+	<body>
+		<div class="info">
+			<button onclick="showInfoBox()">Info</button>
+		</div>
+		<div class="infoBox">
+			<p id="infoText">
+				<span id="infoTextHeader">How to play:</span><br /><br />
+				1. Choose number of players from 2 to 6. <br />
+				2. Enter namer of each player. <br />
+				3. Enter your number, numbers cant repeat. <br />
+				4. When your turn, throw a dice. <br /><br />
+				<span id="infoTextHeader">What is this all about:</span
+				><br /><br />
+				Kosteczka is simple game similar to "bottle", you chose a number
+				and when someone gets your number you have to do something.
+				<br /><br />
+			</p>
+			<button onclick="hideInfoBox()">Zamknij</button>
+		</div>
+		<div id="boxOfPage">
+			<div id="header">
+				<h1>KOSTECZKA</h1>
+			</div>
+			<div id="boxOfGame">
+				<div id="gamePart"></div>
+			</div>
+			<div id="footer">
+				<h4>CREATED BY @Mkztx</h4>
+			</div>
+		</div>
+		<canvas id="gradient-canvas" data-transition-in />
 
-        <script type="module">
-            import { Gradient } from './Gradient.js';
+		<script type="module">
+			import { Gradient } from './Gradient.js';
 
-            // Create your instance
-            const gradient = new Gradient();
+			// Create your instance
+			const gradient = new Gradient();
 
-            // Call `initGradient` with the selector to your canvas
-            gradient.initGradient('#gradient-canvas');
-        </script>
-    </body>
+			// Call `initGradient` with the selector to your canvas
+			gradient.initGradient('#gradient-canvas');
+		</script>
+	</body>
 </html>
